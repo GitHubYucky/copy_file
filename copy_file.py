@@ -6,8 +6,8 @@ import os
 root = Tk()
 root.withdraw()
 
-source = filedialog.askopenfilename(initialdir="/", title="Select file", filetypes=(("XLSX Files","*.xlsx"), ("all files", "*.*")))
-source = filedialog.askopenfilename(initialdir="/", title="Select file", filetypes=(("XLSX Files","*.xlsx"), ("all files", "*.*")))
+# source = filedialog.askopenfilename(initialdir="/", title="Select file", filetypes=(("XLSX Files","*.xlsx"), ("all files", "*.*")))
+source = filedialog.askopenfilename(initialdir="/", title="Select file")
 
 # target = 'import'
 dir_parts = list(os.path.split(source))
