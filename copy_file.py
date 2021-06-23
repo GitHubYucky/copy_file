@@ -1,7 +1,16 @@
-import shutil
-import tkinter.filedialog
+from tkinter import filedialog
+from tkinter import *
+from shutil import copy2
+import os
 
-original = r'original path where the file is currently stored\file name.file extension'
-target = r'target path where the file will be copied\file name.file extension'
+root = Tk()
+root.withdraw()
 
-shutil.copyfile(original, target)
+source = filedialog.askopenfilename(initialdir="/", title="Select file", filetypes=(("XLSX Files","*.xlsx"), ("all files", "*.*")))
+
+target = 'import'
+dir_parts = list(os.path.split(source))
+target_dir = dir_parts[0] + '/' + target + '/' + dir_parts[1]
+# print(target_dir)
+
+copy2(source, target_dir)
